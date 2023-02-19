@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  pix:
+    build: 
+      context: .
+    environment:
+      - ID=1
+    ports:
+      - 443:443
+    volumes:
+        - ./data:/data
+        - /etc/letsencrypt/live/pix.kfelter.com/fullchain.pem:/etc/letsencrypt/live/pix.kfelter.com/fullchain.pem
+        - /etc/letsencrypt/live/pix.kfelter.com/privkey.pem:/etc/letsencrypt/live/pix.kfelter.com/privkey.pem
